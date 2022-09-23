@@ -1,0 +1,14 @@
+version: "3.7"
+services: 
+  db:
+    image: mysql:5.7
+    #not sure if container_name is right
+    container_name: mysql-container
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+    #not sure if password is right
+      MYSQL_ROOT_PASSWORD: madeofdust
+    volumes: 
+    #not sure if volume is correct (not sure if needs the initial "." and space)
+      - ./var/lib/mysql
+    restart: always
