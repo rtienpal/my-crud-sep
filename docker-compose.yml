@@ -12,4 +12,15 @@ services:
       - ./docker-config/mysql/init.sql:/docker-entrypoint-initdb.d/1.sql
       - ./docker-config/mysql/docker.cnf:/etc/mysql/conf.d/docker.cnf
     restart: always
-  
+    networks: 
+      - mynetwork
+  api:
+    image: node
+    container_name: node-container
+    ports:
+      - "9001:9001"
+    networks:
+      - mynetwork 
+networks:
+  mynetwork:
+    name: mynetwork
