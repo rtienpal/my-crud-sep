@@ -3,7 +3,6 @@ services:
   db:
     image: mysql:5.7
     container_name: mysql-container
-    # command: --default-authentication-plugin=mysql_native_password
     command: --init-file /init/init.sql
     environment:
       MYSQL_ROOT_PASSWORD: madeofdust
@@ -23,7 +22,7 @@ services:
       - mynetwork
     volumes:
       - ./backend:/home/node
-      - ./docker-config/node/start_application.sh
+      - ./docker-config/node/start_application.sh:/home/node/start_application.sh
     command: /home/node/start_application.sh
     working_dir: /home/node
   web:
