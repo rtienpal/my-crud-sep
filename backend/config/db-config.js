@@ -1,6 +1,6 @@
 module.exports = {
-    host: "mysql-mycrud",
+    host: "mysql-container",
     user: "root",
     password: "madeofdust",
-    database: "mysql-container"
+    database: "my_crud"
 };

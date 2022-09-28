@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "teste123"
 if !(nodemon --version); then
     echo "Node dependencies not found. Installing."
     npm install -g nodemon
@@ -10,7 +11,7 @@ fi
 go=0;
 
 function check_running() {
-    nodemon /application/app.js
+    nodemon /home/node/start_application.sh
 }
 
 check_running;
