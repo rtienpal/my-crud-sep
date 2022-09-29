@@ -21,12 +21,12 @@ services:
     networks:
       - mynetwork
     volumes:
-      - ./backend:/home/node
-      - ./docker-config/node/start_application.sh:/home/node/start_application.sh
-    command: /home/node/start_application.sh
-    working_dir: /home/node
+      - ./backend:/application
+      - ./docker-config/node/start_application.sh:/application/start_application.sh
+    command: /application/start_application.sh
+    working_dir: /application
   web:
-    image: nginx
+    image: nginx:1.22
     container_name: nginx-container
     volumes:
       - ./docker-config/nginx/default.conf:/etc/nginx/conf.d/default.conf
